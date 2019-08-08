@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+    </h:head>
+    <h:body>
+        <h:form id="form">
+            <p:panelGrid columns="2">
+                <p:outputLabel value="DNI:" />
+                <p:inputText value="#{registroC.registro.DNI}"/>
+
+                <p:outputLabel value="NOMBRE"/>
+                <p:inputText value="#{registroC.registro.NOMBRE}"/>
+
+                <p:outputLabel value="CORREO"/>
+                <p:inputText value="#{registroC.registro.CORREO}"/>
+
+                <p:outputLabel value="FECHA NACIMENTO"/>
+                <p:inputText value="#{registroC.registro.FECHA_NAC}"/>
+
+                <p:commandButton value="GUARDAR" actionListener="#{registroC.guardar()}"/>
+            </p:panelGrid>
+        </h:form>
+
+    </h:body>
+</html>
+
