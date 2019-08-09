@@ -8,21 +8,25 @@
     </h:head>
     <h:body>
         <h:form id="form">
-            <p:panelGrid columns="2">
-                <p:outputLabel value="DNI:" />
-                <p:inputText value="#{registroC.registro.DNI}"/>
+            <center>
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="DNI:" />
+                    <p:inputText id="dni" title="Ingresar solo números" maxlength="8" value="#{registroC.registro.DNI}">
+                        <p:tooltip id="toolTipFocus" for="dni" showEvent="focus" hideEvent="blur"/>
+                        
+                    </p:inputText>
+                    <p:outputLabel value="NOMBRE"/>
+                    <p:inputText value="#{registroC.registro.NOMBRE}"/>
 
-                <p:outputLabel value="NOMBRE"/>
-                <p:inputText value="#{registroC.registro.NOMBRE}"/>
+                    <p:outputLabel value="CORREO"/>
+                    <p:inputText value="#{registroC.registro.CORREO}"/>
 
-                <p:outputLabel value="CORREO"/>
-                <p:inputText value="#{registroC.registro.CORREO}"/>
-
-                <p:outputLabel value="FECHA NACIMENTO"/>
-                <p:inputText value="#{registroC.registro.FECHA_NAC}"/>
-
-                <p:commandButton value="GUARDAR" actionListener="#{registroC.guardar()}"/>
-            </p:panelGrid>
+                    <p:outputLabel value="FECHA NACIMENTO"/>
+                    <p:inputMask mask="99/99/9999" value="#{registroC.registro.FECHA_NAC}"/>
+                </p:panelGrid>
+                <p:spacer/>
+                <center><p:commandButton value="GUARDAR" actionListener="#{registroC.guardar()}" update="form"/></center>
+            </center>
         </h:form>
 
     </h:body>
